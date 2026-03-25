@@ -4,7 +4,8 @@ import "./globals.css";
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
-  weight: ["400", "700"],
+  weight: ["400"],
+  style: ["italic"],
   subsets: ["latin"],
   display: "swap",
 });

@@ -13,15 +13,35 @@
   --color-text-light-secondary: #F3F3F399;
   --color-background: #F6F5F1;
 
-  /* Typography */
-  --font-heading: var(--font-libre-baskerville);
-  --font-body: 'Satoshi', sans-serif;
+  /* Typography — sizes + line heights */
   --font-size-hero: 60px;
+  --font-size-hero--line-height: 110%;
+  --font-size-hero-highlight: 60px;
+  --font-size-hero-highlight--line-height: 110%;
   --font-size-section: 120px;
-  --font-size-project: 30px;
-  --font-size-body-lg: 18px;
+  --font-size-section--line-height: 110%;
+  --font-size-project: 48px;
+  --font-size-project--line-height: 110%;
+  --font-size-project-highlight: 48px;
+  --font-size-project-highlight--line-height: 110%;
+  --font-size-body-lg: 24px;
+  --font-size-body-lg--line-height: 120%;
+  --font-size-body-lg-highlight: 24px;
+  --font-size-body-lg-highlight--line-height: 120%;
   --font-size-body-md: 16px;
+  --font-size-body-md--line-height: 120%;
+  --font-size-body-md-bold: 16px;
+  --font-size-body-md-bold--line-height: 120%;
   --font-size-body-sm: 14px;
+  --font-size-body-sm--line-height: 150%;
+
+  /* Font weights */
+  --font-weight-satoshi-regular: 400;
+  --font-weight-satoshi-medium: 500;
+  --font-weight-satoshi-bold: 700;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.04em;
 
   /* Spacing */
   --spacing-xs: 6px;
@@ -33,14 +53,42 @@
   --spacing-round: 999px;
 }
 
+html {
+  font-family: 'Satoshi', sans-serif;
+}
+
 body {
   background-color: var(--color-background);
   color: var(--color-text-dark);
-  font-family: var(--font-body);
 }
+
+.font-highlight {
+  font-family: var(--font-libre-baskerville);
+  font-style: italic;
+}
+
+/* Global heading letter spacing */
+h1, h2, h3, h4,
+[class*="text-hero"],
+[class*="text-section"],
+[class*="text-project"] {
+  letter-spacing: -0.04em;
+}
+
+/* Composite text styles with baked-in weights */
+.text-style-hero           { font-size: 60px;  line-height: 1.1; font-weight: 500; }
+.text-style-hero-highlight { font-size: 60px;  line-height: 110%; font-family: var(--font-libre-baskerville); font-style: italic; }
+.text-style-section        { font-size: 120px; line-height: 110%; font-weight: 700; }
+.text-style-project        { font-size: 48px;  line-height: 110%; font-weight: 700; }
+.text-style-project-highlight { font-size: 48px; line-height: 110%; font-family: var(--font-libre-baskerville); font-style: italic; }
+.text-style-body-lg        { font-size: 24px;  line-height: 120%; font-weight: 500; }
+.text-style-body-lg-highlight { font-size: 24px; line-height: 120%; font-family: var(--font-libre-baskerville); font-style: italic; }
+.text-style-body-md        { font-size: 16px;  line-height: 120%; font-weight: 500; }
+.text-style-body-md-bold   { font-size: 16px;  line-height: 120%; font-weight: 700; }
+.text-style-body-sm        { font-size: 14px;  line-height: 150%; font-weight: 400; }
 
 @media (max-width: 767px) {
   :root {
-    --spacing-section-mobile: 64px;
+    --spacing-section: 64px;
   }
 }
