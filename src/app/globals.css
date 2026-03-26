@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+a, button {
+  cursor: none;
+}
+
 @theme inline {
   /* Colors */
   --color-accent-1: #5F0F40;

@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
 import Image from "@/components/Image";
 import ProjectInfo from "@/components/ProjectInfo";
 
@@ -27,13 +28,13 @@ export default function ConnectWithCountryPage() {
       </div>
 
       <div className="flex flex-col gap-xl">
-        <Image src="/images/connect_with_country/01.jpg" alt="Connect with Country 1" />
-        <Image src="/images/connect_with_country/02.jpg" alt="Connect with Country 2" />
-        <Image src="/images/connect_with_country/03.jpg" alt="Connect with Country 3" />
-        <Image src="/images/connect_with_country/04.jpg" alt="Connect with Country 4" />
-        <Image src="/images/connect_with_country/05.jpg" alt="Connect with Country 5" />
-        <Image src="/images/connect_with_country/06.jpg" alt="Connect with Country 6" />
-        <Image src="/images/connect_with_country/07.jpg" alt="Connect with Country 7" />
+        <FadeIn><Image src="/images/connect_with_country/01.jpg" alt="Connect with Country 1" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/02.jpg" alt="Connect with Country 2" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/03.jpg" alt="Connect with Country 3" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/04.jpg" alt="Connect with Country 4" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/05.jpg" alt="Connect with Country 5" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/06.jpg" alt="Connect with Country 6" /></FadeIn>
+        <FadeIn><Image src="/images/connect_with_country/07.jpg" alt="Connect with Country 7" /></FadeIn>
       </div>
 
       <Footer />

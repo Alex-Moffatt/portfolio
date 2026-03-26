@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
 import Image from "@/components/Image";
 import ProjectInfo from "@/components/ProjectInfo";
 
@@ -27,12 +28,12 @@ export default function BaselinePage() {
       </div>
 
       <div className="flex flex-col gap-xl">
-        <Image src="/images/baseline/01.jpg" alt="Baseline 1" />
-        <Image src="/images/baseline/02.jpg" alt="Baseline 2" />
-        <Image src="/images/baseline/03.jpg" alt="Baseline 3" />
-        <Image src="/images/baseline/04.jpg" alt="Baseline 4" />
-        <Image src="/images/baseline/05.jpg" alt="Baseline 5" />
-        <Image src="/images/baseline/06.jpg" alt="Baseline 6" />
+        <FadeIn><Image src="/images/baseline/01.jpg" alt="Baseline 1" /></FadeIn>
+        <FadeIn><Image src="/images/baseline/02.jpg" alt="Baseline 2" /></FadeIn>
+        <FadeIn><Image src="/images/baseline/03.jpg" alt="Baseline 3" /></FadeIn>
+        <FadeIn><Image src="/images/baseline/04.jpg" alt="Baseline 4" /></FadeIn>
+        <FadeIn><Image src="/images/baseline/05.jpg" alt="Baseline 5" /></FadeIn>
+        <FadeIn><Image src="/images/baseline/06.jpg" alt="Baseline 6" /></FadeIn>
       </div>
 
       <Footer />

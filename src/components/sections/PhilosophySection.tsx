@@ -1,3 +1,4 @@
+import FadeIn from "../FadeIn";
 import SplitLayout from "../SplitLayout";
 
 type Principle = {
@@ -29,27 +30,29 @@ export default function PhilosophySection({
       {/* Part 2 — Principles */}
       <div className="section-mt px-s md:px-l section-gap-y">
         {principles.map((principle, idx) => (
-          <SplitLayout key={idx}>
-            <div className="space-y-m">
-              <p>
-                <span className="text-style-project text-text-dark">
-                  {principle.title}{" "}
-                </span>
-                <span
-                  className="text-style-project-highlight"
-                  style={{ color: principle.highlightColour }}
-                >
-                  {principle.titleHighlight}
-                </span>
-              </p>
-
-              {principle.paragraphs.map((p, i) => (
-                <p key={i} className="text-style-body-lg text-text-dark">
-                  {p}
+          <FadeIn key={idx} delay={idx * 150}>
+            <SplitLayout>
+              <div className="space-y-m">
+                <p>
+                  <span className="text-style-project text-text-dark">
+                    {principle.title}{" "}
+                  </span>
+                  <span
+                    className="text-style-project-highlight"
+                    style={{ color: principle.highlightColour }}
+                  >
+                    {principle.titleHighlight}
+                  </span>
                 </p>
-              ))}
-            </div>
-          </SplitLayout>
+
+                {principle.paragraphs.map((p, i) => (
+                  <p key={i} className="text-style-body-lg text-text-dark">
+                    {p}
+                  </p>
+                ))}
+              </div>
+            </SplitLayout>
+          </FadeIn>
         ))}
       </div>
     </section>

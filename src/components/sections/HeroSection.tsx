@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLParagraphElement>(null);
@@ -73,31 +74,52 @@ export default function HeroSection() {
   return (
     <section className="h-screen bg-background flex items-center px-s md:px-l">
       <p ref={heroRef} className="text-text-dark" style={{ fontSize: 60, lineHeight: 1.1, fontWeight: 500 }}>
-        <span style={textDimStyle}>Alex Moffatt</span>
-        <a
-          href="/#personal"
-          className="font-highlight text-accent-3 no-underline cursor-pointer"
-          style={dimStyle("personal")}
-          onMouseEnter={() => setHoveredLink("personal")}
-          onMouseLeave={() => setHoveredLink(null)}
-        >*</a>
-        <span style={textDimStyle}>{" "}is a designer and strategist who&apos;s spent eight years building impactful{" "}</span>
-        <a
-          href="/#projects"
-          className="font-highlight text-accent-2 no-underline cursor-pointer"
-          style={dimStyle("projects")}
-          onMouseEnter={() => setHoveredLink("projects")}
-          onMouseLeave={() => setHoveredLink(null)}
-        >products,</a>
-        <span style={textDimStyle}>{" "}</span>
-        <a
-          href="/#philosophy"
-          className="font-highlight text-accent-4 no-underline cursor-pointer"
-          style={dimStyle("philosophy")}
-          onMouseEnter={() => setHoveredLink("philosophy")}
-          onMouseLeave={() => setHoveredLink(null)}
-        >quickly</a>
-        <span style={textDimStyle}>.</span>
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.3 }}
+          style={{ display: "inline" }}
+        >
+          <span style={textDimStyle}>Alex Moffatt</span>
+          <a
+            href="/#personal"
+            className="font-highlight text-accent-3 no-underline cursor-pointer"
+            style={dimStyle("personal")}
+            onMouseEnter={() => setHoveredLink("personal")}
+            onMouseLeave={() => setHoveredLink(null)}
+          >*</a>
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.6 }}
+          style={{ display: "inline" }}
+        >
+          <span style={textDimStyle}>{" "}is a designer and strategist who&apos;s spent eight years building impactful{" "}</span>
+        </motion.span>
+        <motion.span
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2, ease: "easeOut", delay: 0.9 }}
+          style={{ display: "inline" }}
+        >
+          <a
+            href="/#projects"
+            className="font-highlight text-accent-2 no-underline cursor-pointer"
+            style={dimStyle("projects")}
+            onMouseEnter={() => setHoveredLink("projects")}
+            onMouseLeave={() => setHoveredLink(null)}
+          >products,</a>
+          <span style={textDimStyle}>{" "}</span>
+          <a
+            href="/#philosophy"
+            className="font-highlight text-accent-4 no-underline cursor-pointer"
+            style={dimStyle("philosophy")}
+            onMouseEnter={() => setHoveredLink("philosophy")}
+            onMouseLeave={() => setHoveredLink(null)}
+          >quickly</a>
+          <span style={textDimStyle}>.</span>
+        </motion.span>
       </p>
     </section>
   );

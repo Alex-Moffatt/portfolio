@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useCallback, useState } from "react";
+import { usePathname, useRouter } from "next/navigation";
 import Button from "./Button";
 
 const navLinks = [
@@ -9,8 +10,58 @@ const navLinks = [
   { label: "Personal", href: "/#personal" },
 ];
 
+const smoothScrollTo = (targetY: number) => {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  const duration = 800;
+  let startTime: number | null = null;
+
+  const ease = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
+  const step = (timestamp: number) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * ease(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+};
+
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      const hash = href.split("#")[1];
+      if (!hash) return;
+
+      // If we're already on the home page, smooth scroll directly
+      if (pathname === "/") {
+        e.preventDefault();
+        const target = document.getElementById(hash);
+        if (target) smoothScrollTo(target.offsetTop);
+      } else {
+        // Navigate home first, then scroll after load
+        e.preventDefault();
+        router.push("/");
+        const wait = () => {
+          const target = document.getElementById(hash);
+          if (target) {
+            smoothScrollTo(target.offsetTop);
+          } else {
+            requestAnimationFrame(wait);
+          }
+        };
+        // Give the page transition time to render
+        setTimeout(wait, 500);
+      }
+    },
+    [pathname, router]
+  );
 
   return (
     <>
@@ -22,6 +73,7 @@ export default function Header() {
               <a
                 key={href}
                 href={href}
+                onClick={(e) => handleAnchorClick(e, href)}
                 className="text-style-body-md text-[#F3F3F3] no-underline transition-opacity duration-200 hover:opacity-70"
               >
                 {label}
@@ -72,7 +124,10 @@ export default function Header() {
             <a
               key={href}
               href={href}
-              onClick={() => setMenuOpen(false)}
+              onClick={(e) => {
+                setMenuOpen(false);
+                handleAnchorClick(e, href);
+              }}
               className="text-style-project text-[#F3F3F3] no-underline"
             >
               {label}

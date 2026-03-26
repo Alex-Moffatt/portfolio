@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
 import Image from "@/components/Image";
 import ProjectInfo from "@/components/ProjectInfo";
 
@@ -26,13 +27,13 @@ export default function PavePage() {
       </div>
 
       <div className="flex flex-col gap-xl">
-        <Image src="/images/pave/01.jpg" alt="Pave 1" />
-        <Image src="/images/pave/02.jpg" alt="Pave 2" />
-        <Image src="/images/pave/03.jpg" alt="Pave 3" />
-        <Image src="/images/pave/04.jpg" alt="Pave 4" />
-        <Image src="/images/pave/05.jpg" alt="Pave 5" />
-        <Image src="/images/pave/06.jpg" alt="Pave 6" />
-        <Image src="/images/pave/07.jpg" alt="Pave 7" />
+        <FadeIn><Image src="/images/pave/01.jpg" alt="Pave 1" /></FadeIn>
+        <FadeIn><Image src="/images/pave/02.jpg" alt="Pave 2" /></FadeIn>
+        <FadeIn><Image src="/images/pave/03.jpg" alt="Pave 3" /></FadeIn>
+        <FadeIn><Image src="/images/pave/04.jpg" alt="Pave 4" /></FadeIn>
+        <FadeIn><Image src="/images/pave/05.jpg" alt="Pave 5" /></FadeIn>
+        <FadeIn><Image src="/images/pave/06.jpg" alt="Pave 6" /></FadeIn>
+        <FadeIn><Image src="/images/pave/07.jpg" alt="Pave 7" /></FadeIn>
       </div>
 
       <Footer />

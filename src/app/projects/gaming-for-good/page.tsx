@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
 import Image from "@/components/Image";
 import ProjectInfo from "@/components/ProjectInfo";
 
@@ -27,11 +28,11 @@ export default function GamingForGoodPage() {
       </div>
 
       <div className="flex flex-col gap-xl">
-        <Image src="/images/gaming_for_good/01.jpg" alt="Gaming For Good 1" />
-        <Image src="/images/gaming_for_good/02.jpg" alt="Gaming For Good 2" />
-        <Image src="/images/gaming_for_good/03.jpg" alt="Gaming For Good 3" />
-        <Image src="/images/gaming_for_good/04.jpg" alt="Gaming For Good 4" />
-        <Image src="/images/gaming_for_good/05.jpg" alt="Gaming For Good 5" />
+        <FadeIn><Image src="/images/gaming_for_good/01.jpg" alt="Gaming For Good 1" /></FadeIn>
+        <FadeIn><Image src="/images/gaming_for_good/02.jpg" alt="Gaming For Good 2" /></FadeIn>
+        <FadeIn><Image src="/images/gaming_for_good/03.jpg" alt="Gaming For Good 3" /></FadeIn>
+        <FadeIn><Image src="/images/gaming_for_good/04.jpg" alt="Gaming For Good 4" /></FadeIn>
+        <FadeIn><Image src="/images/gaming_for_good/05.jpg" alt="Gaming For Good 5" /></FadeIn>
       </div>
 
       <Footer />

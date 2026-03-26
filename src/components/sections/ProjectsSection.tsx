@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import FadeIn from "../FadeIn";
 import ProjectCard from "../ProjectCard";
 import SplitLayout from "../SplitLayout";
 
@@ -93,31 +94,34 @@ export default function ProjectsSection({
       <div className="section-mt px-s md:px-l section-gap-y">
         {rows.map((row, idx) =>
           Array.isArray(row) ? (
-            <div key={idx} className="flex flex-col md:flex-row gap-[var(--section-gap)] md:gap-l">
-              <ProjectCard
-                title={row[0].title}
-                tags={row[0].tags}
-                image={row[0].image}
-                slug={row[0].slug}
-                size="small"
-              />
-              <ProjectCard
-                title={row[1].title}
-                tags={row[1].tags}
-                image={row[1].image}
-                slug={row[1].slug}
-                size="small"
-              />
-            </div>
+            <FadeIn key={idx}>
+              <div className="flex flex-col md:flex-row gap-[var(--section-gap)] md:gap-l">
+                <ProjectCard
+                  title={row[0].title}
+                  tags={row[0].tags}
+                  image={row[0].image}
+                  slug={row[0].slug}
+                  size="small"
+                />
+                <ProjectCard
+                  title={row[1].title}
+                  tags={row[1].tags}
+                  image={row[1].image}
+                  slug={row[1].slug}
+                  size="small"
+                />
+              </div>
+            </FadeIn>
           ) : (
-            <ProjectCard
-              key={idx}
-              title={row.title}
-              tags={row.tags}
-              image={row.image}
-              slug={row.slug}
-              size={row.size}
-            />
+            <FadeIn key={idx}>
+              <ProjectCard
+                title={row.title}
+                tags={row.tags}
+                image={row.image}
+                slug={row.slug}
+                size={row.size}
+              />
+            </FadeIn>
           )
         )}
       </div>
