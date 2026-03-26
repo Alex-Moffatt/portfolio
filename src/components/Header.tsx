@@ -88,6 +88,7 @@ export default function Header() {
           <div className="hidden md:block">
             <Button
               label="Get in touch"
+              href="mailto:alexmoffatt92@gmail.com"
               className="!bg-[#F3F3F3] !text-[#101214]"
             />
           </div>
@@ -136,8 +137,8 @@ export default function Header() {
 
           <Button
             label="Get in touch"
+            href="mailto:alexmoffatt92@gmail.com"
             className="!bg-[#F3F3F3] !text-[#101214] mt-m"
-            onClick={() => setMenuOpen(false)}
           />
         </div>
       )}
