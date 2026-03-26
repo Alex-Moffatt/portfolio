@@ -92,38 +92,51 @@ export default function ProjectsSection({
 
       {/* Part 2 — Project grid */}
       <div className="section-mt px-s md:px-l section-gap-y">
-        {rows.map((row, idx) =>
-          Array.isArray(row) ? (
-            <FadeIn key={idx}>
-              <div className="flex flex-col md:flex-row gap-[var(--section-gap)] md:gap-l">
-                <ProjectCard
-                  title={row[0].title}
-                  tags={row[0].tags}
-                  image={row[0].image}
-                  slug={row[0].slug}
-                  size="small"
-                />
-                <ProjectCard
-                  title={row[1].title}
-                  tags={row[1].tags}
-                  image={row[1].image}
-                  slug={row[1].slug}
-                  size="small"
-                />
-              </div>
-            </FadeIn>
-          ) : (
-            <FadeIn key={idx}>
-              <ProjectCard
-                title={row.title}
-                tags={row.tags}
-                image={row.image}
-                slug={row.slug}
-                size={row.size}
-              />
-            </FadeIn>
-          )
-        )}
+        {(() => {
+          let projectIndex = 0;
+          return rows.map((row, idx) => {
+            if (Array.isArray(row)) {
+              const p0 = projectIndex++;
+              const p1 = projectIndex++;
+              return (
+                <FadeIn key={idx}>
+                  <div className="flex flex-col md:flex-row gap-[var(--section-gap)] md:gap-l">
+                    <ProjectCard
+                      title={row[0].title}
+                      tags={row[0].tags}
+                      image={row[0].image}
+                      slug={row[0].slug}
+                      size="small"
+                      priority={p0 < 2}
+                    />
+                    <ProjectCard
+                      title={row[1].title}
+                      tags={row[1].tags}
+                      image={row[1].image}
+                      slug={row[1].slug}
+                      size="small"
+                      priority={p1 < 2}
+                    />
+                  </div>
+                </FadeIn>
+              );
+            } else {
+              const p = projectIndex++;
+              return (
+                <FadeIn key={idx}>
+                  <ProjectCard
+                    title={row.title}
+                    tags={row.tags}
+                    image={row.image}
+                    slug={row.slug}
+                    size={row.size}
+                    priority={p < 2}
+                  />
+                </FadeIn>
+              );
+            }
+          });
+        })()}
       </div>
     </section>
   );

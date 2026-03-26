@@ -7,6 +7,7 @@ type ProjectCardProps = {
   image: string;
   slug: string;
   size?: "large" | "small";
+  priority?: boolean;
 };
 
 export default function ProjectCard({
@@ -15,6 +16,7 @@ export default function ProjectCard({
   image,
   slug,
   size = "large",
+  priority = false,
 }: ProjectCardProps) {
   return (
     <Link
@@ -24,7 +26,7 @@ export default function ProjectCard({
       {/* Image with hover scale */}
       <div className="overflow-hidden">
         <div className="transition-transform duration-[400ms] ease-in-out group-hover:scale-[1.02]">
-          <Image src={image} alt={title} unoptimized />
+          <Image src={image} alt={title} priority={priority} sizes={size === "large" ? "100vw" : "(max-width: 768px) 100vw, 50vw"} unoptimized />
         </div>
       </div>
 

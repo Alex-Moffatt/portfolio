@@ -6,6 +6,7 @@ type ImageProps = {
   caption?: string;
   fill?: boolean;
   priority?: boolean;
+  sizes?: string;
   className?: string;
   unoptimized?: boolean;
 };
@@ -16,6 +17,7 @@ export default function Image({
   caption,
   fill = false,
   priority = false,
+  sizes = "100vw",
   className,
   unoptimized = false,
 }: ImageProps) {
@@ -29,7 +31,7 @@ export default function Image({
           priority={priority}
           unoptimized={unoptimized}
           className="object-cover"
-          sizes="100vw"
+          sizes={sizes}
         />
         {caption && (
           <figcaption className="text-style-body-sm text-text-dark-secondary mt-s">
@@ -50,7 +52,7 @@ export default function Image({
           priority={priority}
           unoptimized={unoptimized}
           className="object-cover"
-          sizes="100vw"
+          sizes={sizes}
         />
       </div>
       {caption && (

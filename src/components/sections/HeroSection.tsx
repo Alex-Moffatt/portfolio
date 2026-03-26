@@ -1,11 +1,41 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
+
+const smoothScrollTo = (targetY: number) => {
+  const startY = window.scrollY;
+  const distance = targetY - startY;
+  const duration = 800;
+  let startTime: number | null = null;
+
+  const ease = (t: number) =>
+    t < 0.5 ? 4 * t * t * t : (t - 1) * (2 * t - 2) * (2 * t - 2) + 1;
+
+  const step = (timestamp: number) => {
+    if (!startTime) startTime = timestamp;
+    const progress = Math.min((timestamp - startTime) / duration, 1);
+    window.scrollTo(0, startY + distance * ease(progress));
+    if (progress < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+};
 
 export default function HeroSection() {
   const heroRef = useRef<HTMLParagraphElement>(null);
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+
+  const handleAnchorClick = useCallback(
+    (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+      const hash = href.split("#")[1];
+      if (!hash) return;
+      e.preventDefault();
+      const target = document.getElementById(hash);
+      if (target) smoothScrollTo(target.offsetTop);
+    },
+    []
+  );
 
   const dimStyle = (id: string) => ({
     opacity: hoveredLink && hoveredLink !== id ? 0.4 : 1,
@@ -83,6 +113,7 @@ export default function HeroSection() {
           <span style={textDimStyle}>Alex Moffatt</span>
           <a
             href="/#personal"
+            onClick={(e) => handleAnchorClick(e, "/#personal")}
             className="font-highlight text-accent-3 no-underline cursor-pointer"
             style={dimStyle("personal")}
             onMouseEnter={() => setHoveredLink("personal")}
@@ -105,6 +136,7 @@ export default function HeroSection() {
         >
           <a
             href="/#projects"
+            onClick={(e) => handleAnchorClick(e, "/#projects")}
             className="font-highlight text-accent-2 no-underline cursor-pointer"
             style={dimStyle("projects")}
             onMouseEnter={() => setHoveredLink("projects")}
@@ -113,6 +145,7 @@ export default function HeroSection() {
           <span style={textDimStyle}>{" "}</span>
           <a
             href="/#philosophy"
+            onClick={(e) => handleAnchorClick(e, "/#philosophy")}
             className="font-highlight text-accent-4 no-underline cursor-pointer"
             style={dimStyle("philosophy")}
             onMouseEnter={() => setHoveredLink("philosophy")}
