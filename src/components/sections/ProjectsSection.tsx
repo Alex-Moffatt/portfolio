@@ -70,7 +70,7 @@ export default function ProjectsSection({
   }
 
   return (
-    <section id="projects" className="w-full bg-background py-section">
+    <section id="projects" className="w-full bg-background section-py">
       {/* Part 1 — Section header */}
       <div className="px-s md:px-l">
         <h2
@@ -83,7 +83,7 @@ export default function ProjectsSection({
       </div>
 
       {intro && (
-        <div className="mt-section px-s md:px-l md:flex">
+        <div className="section-mt px-s md:px-l md:flex">
           <div className="hidden md:block md:w-1/2" />
           <div className="w-full md:w-1/2">
             <p className="text-style-body-lg text-text-dark">{intro}</p>
@@ -92,10 +92,10 @@ export default function ProjectsSection({
       )}
 
       {/* Part 2 — Project grid */}
-      <div className="mt-section px-s md:px-l space-y-section">
+      <div className="section-mt px-s md:px-l section-gap-y">
         {rows.map((row, idx) =>
           Array.isArray(row) ? (
-            <div key={idx} className="flex flex-col md:flex-row gap-section md:gap-l">
+            <div key={idx} className="flex flex-col md:flex-row gap-[var(--section-gap)] md:gap-l">
               <ProjectCard
                 title={row[0].title}
                 tags={row[0].tags}

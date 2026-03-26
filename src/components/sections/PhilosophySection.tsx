@@ -13,7 +13,7 @@ export default function PhilosophySection({
   principles,
 }: PhilosophySectionProps) {
   return (
-    <section id="philosophy" className="w-full bg-background py-section">
+    <section id="philosophy" className="w-full bg-background section-py">
       {/* Part 1 — Section heading */}
       <div className="px-s md:px-l">
         <h2
@@ -25,7 +25,7 @@ export default function PhilosophySection({
       </div>
 
       {/* Part 2 — Principles */}
-      <div className="mt-section px-s md:px-l space-y-section">
+      <div className="section-mt px-s md:px-l section-gap-y">
         {principles.map((principle, idx) => (
           <div key={idx} className="md:flex">
             {/* Left column — empty (hidden on mobile) */}

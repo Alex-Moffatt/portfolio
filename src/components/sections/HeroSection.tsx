@@ -42,14 +42,17 @@ export default function HeroSection() {
       const paddingRight = parentStyle ? parseFloat(parentStyle.paddingRight) : 0;
       clone.style.width = `${parentWidth - paddingLeft - paddingRight}px`;
 
-      // Binary search for the largest font size that fits in 3 lines
+      // More lines on mobile = larger text relative to screen
+      const targetLines = window.innerWidth < 768 ? 6 : 3;
+
+      // Binary search for the largest font size that fits in target lines
       let lo = 10;
       let hi = 200;
       while (lo < hi) {
         const mid = Math.ceil((lo + hi) / 2);
         clone.style.fontSize = `${mid}px`;
         clone.style.lineHeight = "1.1";
-        if (getLineCount(clone) <= 3) {
+        if (getLineCount(clone) <= targetLines) {
           lo = mid;
         } else {
           hi = mid - 1;

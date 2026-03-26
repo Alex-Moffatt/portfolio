@@ -12,7 +12,7 @@ export default function ProjectInfo({
   paragraphs,
 }: ProjectInfoProps) {
   return (
-    <div className="md:flex py-section">
+    <div className="md:flex section-py">
       {/* Left column — empty (hidden on mobile) */}
       <div className="hidden md:block md:w-1/2" />
 
@@ -27,9 +27,9 @@ export default function ProjectInfo({
           ))}
         </div>
 
-        <div className="flex gap-s mt-m">
+        <div className="flex flex-wrap gap-s mt-m">
           {tags.map((tag, i) => (
-            <span key={i} className="text-style-body-sm text-text-dark-secondary">
+            <span key={i} className="text-style-body-sm text-text-dark-secondary whitespace-nowrap">
               {tag}
             </span>
           ))}

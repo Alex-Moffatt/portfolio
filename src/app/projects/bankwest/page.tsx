@@ -8,27 +8,30 @@ export default function BankwestPage() {
     <>
       <Header />
 
-      <div className="relative w-full" style={{ aspectRatio: "16 / 10" }}>
-        <Image src="https://placehold.co/1600x1000" alt="Bankwest" fill unoptimized />
+      <div className="relative w-full h-screen">
+        <Image src="/images/bankwest/hero.jpg" alt="Bankwest" fill />
       </div>
 
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Bankwest website"
-          client="Launching a new bankweu"
-          tags={["Web Design", "UX", "Prototyping"]}
+          client="Bankwest.com.au"
+          tags={["Web design", "Brand", "Strategy"]}
           paragraphs={[
-            "A redesign of StartingBlocks.gov.au, Australia's free government resource for families navigating early childhood education. The site helps parents find and compare services, calculate childcare subsidies, and understand the National Quality Standard.",
-            "The brief was clear: the existing landscape was fragmented and outdated, leaving families frustrated at a critical decision point. Over 22 weeks, we rebuilt the experience around simplicity with intuitive search, straightforward comparison tools, and plain-language guidance through an otherwise complex system.",
-            "Research drove every decision. 15+ hours of user testing with a deliberately inclusive sample: metro and regional families, ATSI, EAL/D, and children with diverse needs. The results spoke for themselves. What once took families 12 hours to research took one.",
+            "A redesign of bankwest.com.au, aimed at helping Australians make confident decisions about their money. Banking has long left customers feeling overwhelmed, struggling to compare products, understand fees, and assess what's right for their situation.",
+            "The new site reorganises Bankwest's offering around four core customer needs: Spend, Save, Borrow, Support. Interactive comparison tools let customers weigh up products side by side. Personalised calculators surface the numbers that actually matter to them. Navigation, search, and contextual help reduce friction at every step.",
+            "Built for digital natives: animations and interactions bring the experience to life without sacrificing speed or security. Delivered through 50 hours of customer testing across iterative prototypes, validating every major decision before it shipped.",
           ]}
         />
       </div>
 
       <div className="flex flex-col gap-xl">
-        <Image src="https://placehold.co/1600x1000" alt="Bankwest 1" unoptimized />
-        <Image src="https://placehold.co/1600x1000" alt="Bankwest 2" unoptimized />
-        <Image src="https://placehold.co/1600x1000" alt="Bankwest 3" unoptimized />
+        <Image src="/images/bankwest/01.jpg" alt="Bankwest 1" />
+        <Image src="/images/bankwest/02.jpg" alt="Bankwest 2" />
+        <Image src="/images/bankwest/03.jpg" alt="Bankwest 3" />
+        <Image src="/images/bankwest/04.jpg" alt="Bankwest 4" />
+        <Image src="/images/bankwest/05.jpg" alt="Bankwest 5" />
+        <Image src="/images/bankwest/06.jpg" alt="Bankwest 6" />
       </div>
 
       <Footer />

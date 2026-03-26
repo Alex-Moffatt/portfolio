@@ -87,8 +87,24 @@ h1, h2, h3, h4,
 .text-style-body-md-bold   { font-size: 16px;  line-height: 120%; font-weight: 700; }
 .text-style-body-sm        { font-size: 14px;  line-height: 150%; font-weight: 400; }
 
+/* Responsive section spacing utilities */
+:root { --section-gap: 120px; }
+.section-py { padding-top: var(--section-gap); padding-bottom: var(--section-gap); }
+.section-mt { margin-top: var(--section-gap); }
+.section-gap-y > * + * { margin-top: var(--section-gap); }
+
 @media (max-width: 767px) {
   :root {
-    --spacing-section: 64px;
+    --spacing-section: 60px;
+    --section-gap: 60px;
   }
+
+  /* Mobile typography overrides */
+  .text-style-project        { font-size: 28px; }
+  .text-style-project-highlight { font-size: 28px; }
+  .text-style-body-lg        { font-size: 18px; }
+  .text-style-body-lg-highlight { font-size: 18px; }
+  .text-style-body-md        { font-size: 15px; }
+  .text-style-body-md-bold   { font-size: 15px; }
+  .text-style-body-sm        { font-size: 13px; }
 }

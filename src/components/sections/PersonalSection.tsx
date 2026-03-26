@@ -10,7 +10,7 @@ type PersonalSectionProps = {
 
 export default function PersonalSection({ bio, images }: PersonalSectionProps) {
   return (
-    <section id="personal" className="w-full bg-background py-section">
+    <section id="personal" className="w-full bg-background section-py">
       {/* Part 1 — Section heading */}
       <div className="px-s md:px-l">
         <h2
@@ -22,7 +22,7 @@ export default function PersonalSection({ bio, images }: PersonalSectionProps) {
       </div>
 
       {/* Part 2 — Bio */}
-      <div className="mt-section px-s md:px-l md:flex">
+      <div className="section-mt px-s md:px-l md:flex">
         <div className="hidden md:block md:w-1/2" />
         <div className="w-full md:w-1/2">
           <p className="text-style-body-lg text-text-dark">{bio}</p>
@@ -30,7 +30,7 @@ export default function PersonalSection({ bio, images }: PersonalSectionProps) {
       </div>
 
       {/* Part 3 — Images */}
-      <div className="mt-section px-s md:px-l space-y-section">
+      <div className="section-mt px-s md:px-l section-gap-y">
         {images.map((img, i) => (
           <Image key={i} src={img.src} alt={img.alt} unoptimized />
         ))}

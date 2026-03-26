@@ -13,47 +13,47 @@ export default function Home() {
     <HeroSection />
 
     <ProjectsSection
-      intro="A selection of recent work across brand, product, and digital strategy."
+      intro="A selection of recent work across product, experience, brand, and digital strategy."
       projects={[
         {
           title: "Baseline",
-          tags: ["Product Design", "Strategy", "Development"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["App design"],
+          image: "/images/baseline/hero.jpg",
           slug: "baseline",
           size: "large",
         },
         {
           title: "Bankwest",
-          tags: ["Web Design", "UX", "Prototyping"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["Web design"],
+          image: "/images/bankwest/hero.jpg",
           slug: "bankwest",
           size: "large",
         },
         {
           title: "Pave",
-          tags: ["Product Design", "UX"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["App design"],
+          image: "/images/pave/hero.jpg",
           slug: "pave",
           size: "small",
         },
         {
           title: "Connect With Country",
-          tags: ["UX", "Strategy"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["Web design"],
+          image: "/images/connect_with_country/hero.jpg",
           slug: "connect-with-country",
           size: "small",
         },
         {
           title: "NZEA",
-          tags: ["Web Design", "UX", "Strategy"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["Web design"],
+          image: "/images/nzea/hero.jpg",
           slug: "nzea",
           size: "small",
         },
         {
           title: "Gaming For Good",
-          tags: ["Strategy", "Marketing"],
-          image: "https://placehold.co/1600x1000",
+          tags: ["Experience design"],
+          image: "/images/gaming_for_good/hero.jpg",
           slug: "gaming-for-good",
           size: "small",
         },
@@ -103,7 +103,7 @@ export default function Home() {
 
     <PersonalSection
       bio="Outside of work, my passions are surfing, golf, sandwiches and drum & bass — a classic mix really. I nerd out on puzzles, games and books, and am a pretty avid cricket and F1 fan."
-      images={[{ src: "https://images.unsplash.com/photo-1431576901776-e539bd916ba2?w=1600&h=1000&fit=crop", alt: "Alex Moffatt" }]}
+      images={[{ src: "/images/personal/alex_moffatt.jpg", alt: "Alex Moffatt" }]}
     />
 
     <Footer />

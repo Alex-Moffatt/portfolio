@@ -30,7 +30,7 @@ export default function Header() {
           </nav>
 
           {/* Centre — logotype */}
-          <span className="text-style-project text-[#F3F3F3]">AM</span>
+          <a href="/" className="text-style-project text-[#F3F3F3] no-underline">AM</a>
 
           {/* Right — CTA (desktop only) */}
           <div className="hidden md:block">
