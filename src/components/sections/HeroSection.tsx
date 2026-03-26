@@ -146,7 +146,7 @@ export default function HeroSection() {
           <a
             href="/#philosophy"
             onClick={(e) => handleAnchorClick(e, "/#philosophy")}
-            className="font-highlight text-accent-4 no-underline cursor-pointer"
+            className="font-highlight text-accent-5 no-underline cursor-pointer"
             style={dimStyle("philosophy")}
             onMouseEnter={() => setHoveredLink("philosophy")}
             onMouseLeave={() => setHoveredLink(null)}

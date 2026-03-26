@@ -3,6 +3,7 @@ import { Libre_Baskerville } from "next/font/google";
 import CustomCursor from "@/components/CustomCursor";
 import PageTransition from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const libreBaskerville = Libre_Baskerville({
@@ -35,6 +36,7 @@ export default function RootLayout({
         <CustomCursor />
         <PageTransition>{children}</PageTransition>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

@@ -65,7 +65,7 @@ export default function Home() {
         {
           title: "Build lean,",
           titleHighlight: "learn quickly",
-          highlightColour: "#E36414",
+          highlightColour: "#FB8B24",
           paragraphs: [
             "My approach is to build only what's necessary to answer the question in front of us, and to treat every round of testing as an attempt to break the idea rather than sell it. The faster you find out something is wrong, the less it costs to fix it, and the more confident you can be when the evidence actually holds up.",
           ],
@@ -81,7 +81,7 @@ export default function Home() {
         {
           title: "Hold out for the",
           titleHighlight: "hell yes",
-          highlightColour: "#FB8B24",
+          highlightColour: "#0F4C5C",
           paragraphs: [
             "Most products launch to a polite shrug. Teams mistake the absence of strong objections for validation, but lukewarm is just a slower kind of failure. After hundreds of hours of testing with real people, I've learned to tell the difference between \"yes, that works\" and \"yes, I actually want that.\" The first gets you a product. The second gets you one people come back to.",
           ],
