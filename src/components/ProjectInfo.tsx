@@ -16,11 +16,11 @@ export default function ProjectInfo({
   return (
     <SplitLayout className="section-py">
       <h2 className="text-style-project text-text-dark">{title}</h2>
-      <p className="text-style-body-sm text-text-dark-secondary mt-xs">{summary}</p>
+      <p className="text-style-body-md text-text-dark-secondary mt-xs">{summary}</p>
 
       <div className="mt-m space-y-m">
         {paragraphs.map((p, i) => (
-          <p key={i} className="text-style-body-md text-text-dark">{p}</p>
+          <p key={i} className="text-style-body-lg text-text-dark">{p}</p>
         ))}
       </div>
 
