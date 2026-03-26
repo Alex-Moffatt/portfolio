@@ -1,3 +1,5 @@
+import SplitLayout from "../SplitLayout";
+
 type Principle = {
   title: string;
   titleHighlight: string;
@@ -27,12 +29,8 @@ export default function PhilosophySection({
       {/* Part 2 — Principles */}
       <div className="section-mt px-s md:px-l section-gap-y">
         {principles.map((principle, idx) => (
-          <div key={idx} className="md:flex">
-            {/* Left column — empty (hidden on mobile) */}
-            <div className="hidden md:block md:w-1/2" />
-
-            {/* Right column — content */}
-            <div className="w-full md:w-1/2 space-y-m">
+          <SplitLayout key={idx}>
+            <div className="space-y-m">
               <p>
                 <span className="text-style-project text-text-dark">
                   {principle.title}{" "}
@@ -51,7 +49,7 @@ export default function PhilosophySection({
                 </p>
               ))}
             </div>
-          </div>
+          </SplitLayout>
         ))}
       </div>
     </section>

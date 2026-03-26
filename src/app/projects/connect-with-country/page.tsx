@@ -15,7 +15,7 @@ export default function ConnectWithCountryPage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Connect with Country"
-          client="Mobile app"
+          summary="Providing cultural resources for Australia"
           tags={["Web design", "Brand"]}
           paragraphs={[
             "A digital tool helping Australians offer meaningful Acknowledgements of Country, built in partnership with Traditional Owners and Custodians across NSW.",

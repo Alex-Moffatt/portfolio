@@ -63,39 +63,27 @@ export default function Home() {
     <PhilosophySection
       principles={[
         {
-          title: "Test to kill,",
-          titleHighlight: "not to confirm",
+          title: "Build lean,",
+          titleHighlight: "learn quickly",
           highlightColour: "#E36414",
           paragraphs: [
-            "Most testing is just expensive validation of decisions that have already been made. Teams build something, put it in front of users, and unconsciously look for the nod. That's reassurance, not testing. The only way to actually learn is to go in looking for what's wrong: what doesn't land, what confuses people, what solves the wrong problem entirely.",
-            "My approach is to build only what's necessary to answer the question in front of us, and to treat every round of testing as an attempt to break the idea rather than sell it. The faster you find out something is wrong, the less it costs to fix it — and the more confident you can be when the evidence actually holds up.",
+            "My approach is to build only what's necessary to answer the question in front of us, and to treat every round of testing as an attempt to break the idea rather than sell it. The faster you find out something is wrong, the less it costs to fix it, and the more confident you can be when the evidence actually holds up.",
           ],
         },
         {
-          title: "Design",
-          titleHighlight: "dangerously",
-          highlightColour: "#9A031E",
-          paragraphs: [
-            "Mt design is safe. It follows convention, references what's already out there, and lands somewhere in the middle — functional, inoffensive, forgettable. Safe design gets a lukewarm response because that's exactly what it was built for.",
-            "The products that push industries forward are the ones that polarise. They get a hell yes from the people they're made for, and a hell no from everyone else — and that's fine, because the hell no was never the target anyway. Getting to that hell yes requires a willingness to make calls that feel risky, to propose things that don't have a precedent yet, and to resist the gravitational pull towards what's already been done. Safe is comfortable. Safe is also how you become invisible.",
-          ],
-        },
-        {
-          title: "Know what to",
-          titleHighlight: "fight for",
-          highlightColour: "#FB8B24",
-          paragraphs: [
-            "Most designers drift. Some drift towards the customer and lose sight of what's actually buildable. Others drift towards aesthetics and forget tk whether anyone wants the thing in the first place. After eight years working across strategy, design, and product, I've learned that the job isn't to advocate for one side — it's to hold both simultaneously and know when each one deserves to win.",
-            "That means being comfortable telling an engineer their constraint is worth designing around, and equally comfortable telling a stakeholder that a shortcut will cost them customer value they can't afford to lose. The best product decisions happen at that intersect, and getting there requires understanding both sides well enough to argue for either.",
-          ],
-        },
-        {
-          title: "Need first,",
+          title: "Needs first,",
           titleHighlight: "aesthetics second",
           highlightColour: "#9A031E",
           paragraphs: [
-            "There's a version of design that's really just decoration — beautiful surfaces applied to products that haven't answered the fundamental question of whether they're actually useful. It's easy to do and it looks impressive in a portfolio. It also tends not tok.",
-            "I care about execution. Craft matters, and how something looks and feels affects whether people trust it, use it, and come back to it. But aesthetics earn their place by solving the problem well — they're the result of good thinking, not a substitute for it. When I'm working on something, the question I keep coming back to is simple: does this actually meet the need? Everything else follows from that.",
+            "Successful products solve a genuine problem well. Good aesthetics are the result of good thinking, not a substitute for it. When I'm working on something, the question I keep coming back to is simple: does this actually meet the need? Everything else follows from that.",
+          ],
+        },
+        {
+          title: "Hold out for the",
+          titleHighlight: "hell yes",
+          highlightColour: "#FB8B24",
+          paragraphs: [
+            "Most products launch to a polite shrug. Teams mistake the absence of strong objections for validation, but lukewarm is just a slower kind of failure. After hundreds of hours of testing with real people, I've learned to tell the difference between \"yes, that works\" and \"yes, I actually want that.\" The first gets you a product. The second gets you one people come back to.",
           ],
         },
       ]}

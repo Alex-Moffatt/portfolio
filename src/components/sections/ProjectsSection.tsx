@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import ProjectCard from "../ProjectCard";
+import SplitLayout from "../SplitLayout";
 
 type ProjectsSectionProject = {
   title: string;
@@ -83,12 +84,9 @@ export default function ProjectsSection({
       </div>
 
       {intro && (
-        <div className="section-mt px-s md:px-l md:flex">
-          <div className="hidden md:block md:w-1/2" />
-          <div className="w-full md:w-1/2">
-            <p className="text-style-body-lg text-text-dark">{intro}</p>
-          </div>
-        </div>
+        <SplitLayout className="section-mt px-s md:px-l">
+          <p className="text-style-body-lg text-text-dark">{intro}</p>
+        </SplitLayout>
       )}
 
       {/* Part 2 — Project grid */}

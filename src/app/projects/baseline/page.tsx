@@ -15,7 +15,7 @@ export default function BaselinePage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Baseline"
-          client="Mobile app"
+          summary="Supporting men in relationships to quit porn"
           tags={["App design", "Brand", "Strategy", "AI development", "Marketing", "Analytics", "Business modelling"]}
           paragraphs={[
             "A mobile app helping men in relationships address problematic pornography use, built independently from scratch using React Native, Expo, and Supabase.",

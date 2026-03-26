@@ -1,4 +1,5 @@
 import Image from "../Image";
+import SplitLayout from "../SplitLayout";
 
 type PersonalSectionProps = {
   bio: string;
@@ -22,12 +23,9 @@ export default function PersonalSection({ bio, images }: PersonalSectionProps) {
       </div>
 
       {/* Part 2 — Bio */}
-      <div className="section-mt px-s md:px-l md:flex">
-        <div className="hidden md:block md:w-1/2" />
-        <div className="w-full md:w-1/2">
-          <p className="text-style-body-lg text-text-dark">{bio}</p>
-        </div>
-      </div>
+      <SplitLayout className="section-mt px-s md:px-l">
+        <p className="text-style-body-lg text-text-dark">{bio}</p>
+      </SplitLayout>
 
       {/* Part 3 — Images */}
       <div className="section-mt px-s md:px-l section-gap-y">

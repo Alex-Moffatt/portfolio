@@ -15,7 +15,7 @@ export default function BankwestPage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Bankwest website"
-          client="Bankwest.com.au"
+          summary="Launching a new bankwest.com.au"
           tags={["Web design", "Brand", "Strategy"]}
           paragraphs={[
             "A redesign of bankwest.com.au, aimed at helping Australians make confident decisions about their money. Banking has long left customers feeling overwhelmed, struggling to compare products, understand fees, and assess what's right for their situation.",

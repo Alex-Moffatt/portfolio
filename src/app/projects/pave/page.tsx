@@ -15,10 +15,10 @@ export default function PavePage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Pave"
-          client="Mobile app"
+          summary="Supporting young Australians to quit vaping"
           tags={["App design", "Strategy"]}
           paragraphs={[
-            "A free app helping young Australians aged 14-24 quit vaping, codesigned with 50 young people and built on behaviour change theory.",
+            "Designed for Cancer Institute NSW, Pave is a free app helping young Australians aged 14-24 quit vaping, codesigned with 50 young people and built on behaviour change theory.",
             "Australia's youth vaping rates quadrupled between 2019 and 2023. Existing quit resources were designed for adult smokers, leaving young people without targeted support at a critical point in their development. Pave was designed specifically for them: personalised onboarding based on behaviours and triggers, daily check-ins tracking streaks and savings, distraction tools for cravings, and a harm-minimisation approach that allows slip-ups without losing progress.",
             "Launched after 19 weeks and 22 research sessions. Early results: 4,500 downloads in three months, a 4.7 App Store rating, and peak ranking of #44 in Health and Fitness.",
           ]}

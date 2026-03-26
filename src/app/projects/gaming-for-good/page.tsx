@@ -15,7 +15,7 @@ export default function GamingForGoodPage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="Gaming For Good"
-          client="British Red Cross"
+          summary="Helping streamers raise money for causes they care about"
           tags={["Experience design", "Strategy", "Marketing", "Analytics", "Business modelling"]}
           paragraphs={[
             "A gaming and streaming fundraising programme built for the British Red Cross, launched in April 2020 to reach a new generation of supporters through Twitch and YouTube Gaming.",

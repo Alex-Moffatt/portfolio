@@ -15,7 +15,7 @@ export default function NzeaPage() {
       <div className="px-s md:px-l">
         <ProjectInfo
           title="NZEA"
-          client="Web platform"
+          summary="Supporting Australians in non-renewables to transition"
           tags={["Web design", "Brand", "Strategy"]}
           paragraphs={[
             "A website for the Net Zero Economy Authority, helping Australians understand Australia's transition away from coal and gas, and what it means for them.",
