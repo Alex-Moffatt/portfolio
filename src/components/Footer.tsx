@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import CtaButton from "@/components/CtaButton";
 
 export default function Footer() {
   const logoRef = useRef<HTMLParagraphElement>(null);
@@ -31,28 +32,23 @@ export default function Footer() {
   }, []);
 
   return (
-    <footer className="w-full bg-background border-t border-[#10141933]">
-      <div className="px-s md:px-l py-xl">
-        {/* Top row */}
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-xs">
-          <span className="text-style-body-sm text-text-dark">© Alex Moffatt</span>
-          <a
-            href="mailto:alexmoffatt92@gmail.com"
-            className="text-style-body-sm text-text-dark hover:opacity-70 transition-opacity duration-200"
-          >
-            alexmoffatt92@gmail.com
-          </a>
-        </div>
+    <footer className="bg-text-dark border-t border-text-dark w-full flex flex-col gap-section pt-section">
+      {/* Top row */}
+      <div className="px-s md:px-l flex flex-col md:flex-row md:items-center gap-m">
+        <span className="text-style-label uppercase text-text-light-secondary">© Alex Moffatt</span>
+        <CtaButton href="/contact" className="inline-flex justify-center w-fit">
+          Get in touch
+        </CtaButton>
       </div>
 
       {/* Full-width logotype */}
       <div className="w-full leading-none">
         <p
           ref={logoRef}
-          className="block w-full text-text-dark whitespace-nowrap"
+          className="block w-full text-text-light whitespace-nowrap"
           style={{
-            fontFamily: "'Satoshi', sans-serif",
-            fontWeight: 700,
+            fontFamily: "var(--font-bricolage-grotesque), sans-serif",
+            fontWeight: 500,
             fontSize: 120,
             lineHeight: 1,
           }}

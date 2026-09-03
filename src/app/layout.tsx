@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
-import { Libre_Baskerville } from "next/font/google";
+import { Bricolage_Grotesque, IBM_Plex_Mono, Libre_Baskerville } from "next/font/google";
 import CustomCursor from "@/components/CustomCursor";
 import PageTransition from "@/components/PageTransition";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
+
+const bricolageGrotesque = Bricolage_Grotesque({
+  variable: "--font-bricolage-grotesque",
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const ibmPlexMono = IBM_Plex_Mono({
+  variable: "--font-ibm-plex-mono",
+  weight: ["500"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 const libreBaskerville = Libre_Baskerville({
   variable: "--font-libre-baskerville",
@@ -25,13 +39,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${libreBaskerville.variable} antialiased`}>
-      <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html
+      lang="en"
+      className={`${bricolageGrotesque.variable} ${ibmPlexMono.variable} ${libreBaskerville.variable} antialiased`}
+    >
       <body>
         <CustomCursor />
         <PageTransition>{children}</PageTransition>

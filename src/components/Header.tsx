@@ -2,12 +2,13 @@
 
 import { useCallback, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import Button from "./Button";
+import CtaButton from "@/components/CtaButton";
 
 const navLinks = [
-  { label: "Projects", href: "/#projects" },
-  { label: "Philosophy", href: "/#philosophy" },
-  { label: "Personal", href: "/#personal" },
+  { label: "Work", href: "/work" },
+  { label: "Services", href: "/services" },
+  { label: "About", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const smoothScrollTo = (targetY: number) => {
@@ -27,6 +28,14 @@ const smoothScrollTo = (targetY: number) => {
   };
 
   requestAnimationFrame(step);
+};
+
+const isNavLinkActive = (href: string, pathname: string) => {
+  if (href === "/work") return pathname === "/work" || pathname.startsWith("/projects");
+  if (href === "/services") return pathname === "/services";
+  if (href === "/about") return pathname === "/about";
+  if (href === "/contact") return pathname === "/contact";
+  return false;
 };
 
 export default function Header() {
@@ -65,33 +74,30 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 mix-blend-difference">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-white border-t border-b border-text-dark">
         <div className="flex w-full items-center justify-between px-s md:px-l py-s gap-s">
-          {/* Left — nav links (desktop only) */}
-          <nav className="hidden md:flex items-center gap-m">
-            {navLinks.map(({ label, href }) => (
-              <a
-                key={href}
-                href={href}
-                onClick={(e) => handleAnchorClick(e, href)}
-                className="text-style-body-md text-[#F3F3F3] no-underline transition-opacity duration-200 hover:opacity-70"
-              >
-                {label}
-              </a>
-            ))}
-          </nav>
+          {/* Left — logo + nav links (desktop only) */}
+          <div className="flex items-center gap-xl">
+            <a href="/" className="text-style-subtitle text-text-dark no-underline">am</a>
 
-          {/* Centre — logotype */}
-          <a href="/" className="text-style-project text-[#F3F3F3] no-underline">AM</a>
+            <nav className="hidden md:flex items-center gap-m">
+              {navLinks.map(({ label, href }) => (
+                <a
+                  key={href}
+                  href={href}
+                  onClick={(e) => handleAnchorClick(e, href)}
+                  className={`text-style-label uppercase no-underline transition-opacity duration-200 hover:opacity-70 ${isNavLinkActive(href, pathname) ? "text-text-dark" : "text-text-dark-secondary"}`}
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+          </div>
 
           {/* Right — CTA (desktop only) */}
-          <div className="hidden md:block">
-            <Button
-              label="Get in touch"
-              href="mailto:alexmoffatt92@gmail.com"
-              className="!bg-[#F3F3F3] !text-[#101214]"
-            />
-          </div>
+          <CtaButton href="/contact" className="hidden md:inline-flex">
+            Get in touch
+          </CtaButton>
 
           {/* Hamburger (mobile only) */}
           <button
@@ -100,19 +106,19 @@ export default function Header() {
             onClick={() => setMenuOpen(true)}
             aria-label="Open menu"
           >
-            <span className="block w-[20px] h-[2px] bg-[#F3F3F3]" />
-            <span className="block w-[20px] h-[2px] bg-[#F3F3F3]" />
-            <span className="block w-[20px] h-[2px] bg-[#F3F3F3]" />
+            <span className="block w-[20px] h-[2px] bg-text-dark" />
+            <span className="block w-[20px] h-[2px] bg-text-dark" />
+            <span className="block w-[20px] h-[2px] bg-text-dark" />
           </button>
         </div>
       </header>
 
       {/* Full screen mobile nav overlay */}
       {menuOpen && (
-        <div className="fixed inset-0 z-[100] bg-[#101214] flex flex-col items-center justify-center gap-xl md:hidden">
+        <div className="fixed inset-0 z-[100] bg-text-dark flex flex-col items-center justify-center gap-xl md:hidden">
           <button
             type="button"
-            className="absolute top-s right-s p-[8px] text-[#F3F3F3]"
+            className="absolute top-s right-s p-[8px] text-text-light"
             onClick={() => setMenuOpen(false)}
             aria-label="Close menu"
           >
@@ -129,17 +135,15 @@ export default function Header() {
                 setMenuOpen(false);
                 handleAnchorClick(e, href);
               }}
-              className="text-style-project text-[#F3F3F3] no-underline"
+              className={`text-style-h2 no-underline ${isNavLinkActive(href, pathname) ? "text-text-light" : "text-text-light-secondary"}`}
             >
               {label}
             </a>
           ))}
 
-          <Button
-            label="Get in touch"
-            href="mailto:alexmoffatt92@gmail.com"
-            className="!bg-[#F3F3F3] !text-[#101214] mt-m"
-          />
+          <CtaButton href="/contact" variant="light" className="inline-flex mt-m">
+            Get in touch
+          </CtaButton>
         </div>
       )}
     </>
