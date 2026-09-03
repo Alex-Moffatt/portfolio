@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Image from "@/components/Image";
 import CaseStudySection from "@/components/CaseStudySection";
-import TextBlock from "@/components/TextBlock";
+import SectionIntro from "@/components/SectionIntro";
 import VideoHero from "@/components/sections/VideoHero";
 import Pill from "@/components/Pill";
 
@@ -40,10 +40,7 @@ export default function AboutPage() {
       {/* Experience */}
       <section className="w-full bg-background border-t border-text-dark px-s md:px-l pt-m pb-section flex flex-col">
         <CaseStudySection label="Experience">
-          <p className="text-style-subtitle text-text-dark max-w-col-3">
-            Combining engineering, fundraising and design.
-          </p>
-          <TextBlock>
+          <SectionIntro heading="Combining engineering, fundraising and design.">
             <p>
               I began my career as a civil engineer in London, wanting to improve the lives of
               society through good infrastructure.
@@ -62,17 +59,14 @@ export default function AboutPage() {
               I&rsquo;m now bringing together my engineering, fundraising and design backgrounds
               to help organisations create impact in an evidence-driven way.
             </p>
-          </TextBlock>
+          </SectionIntro>
         </CaseStudySection>
       </section>
 
       {/* On impact */}
       <section className="w-full bg-background border-t border-text-dark px-s md:px-l pt-m pb-section flex flex-col">
         <CaseStudySection label="On impact">
-          <p className="text-style-subtitle text-text-dark max-w-col-3">
-            Effective impact to the front of the queue.
-          </p>
-          <TextBlock>
+          <SectionIntro heading="Effective impact to the front of the queue.">
             <p>
               Impact has been the thread throughout my career, and I&rsquo;m driven by putting my
               energy and time into work that genuinely makes a difference.
@@ -82,30 +76,29 @@ export default function AboutPage() {
               passionate about supporting high-impact charities. If you&rsquo;re working on
               something in that space, I&rsquo;d love to hear from you.
             </p>
-          </TextBlock>
+          </SectionIntro>
         </CaseStudySection>
       </section>
 
       {/* Personal */}
       <section className="w-full bg-background border-t border-text-dark px-s md:px-l pt-m pb-section flex flex-col">
         <CaseStudySection label="Personal" justify="start">
-          <p className="text-style-subtitle text-text-dark max-w-col-3">Sports, games and food.</p>
-          <TextBlock>
+          <SectionIntro heading="Sports, games and food.">
             <p>
               I live in Maroubra, where I am lucky enough to be close enough to the beach to surf
               every day. If I&rsquo;m not in the water, I&rsquo;m in the mountains, in the
               kitchen, or on the golf course.
             </p>
-          </TextBlock>
+          </SectionIntro>
 
-          <div className="flex gap-s w-full">
-            <div className="flex-1 min-w-0 aspect-[1920/1080] border border-text-dark relative overflow-hidden grayscale">
+          <div className="flex flex-col sm:flex-row gap-s w-full">
+            <div className="flex-1 min-w-0 aspect-[1920/1080] border border-text-dark relative overflow-hidden grayscale-0 md:grayscale">
               <Image src="/images/personal/about-photo-1.jpg" alt="Alex surfing" fill unoptimized />
             </div>
-            <div className="w-[132px] shrink-0 border border-text-dark relative overflow-hidden grayscale">
+            <div className="aspect-[1920/1080] sm:aspect-auto w-full sm:w-[132px] shrink-0 border border-text-dark relative overflow-hidden grayscale-0 md:grayscale">
               <Image src="/images/personal/about-photo-2.jpg" alt="Alex" fill unoptimized />
             </div>
-            <div className="flex-1 min-w-0 aspect-[1920/1080] border border-text-dark relative overflow-hidden grayscale">
+            <div className="flex-1 min-w-0 aspect-[1920/1080] border border-text-dark relative overflow-hidden grayscale-0 md:grayscale">
               <video autoPlay loop muted playsInline className="absolute inset-0 w-full h-full object-cover">
                 <source src="/videos/me.mp4" type="video/mp4" />
               </video>

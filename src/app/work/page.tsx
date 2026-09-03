@@ -70,7 +70,7 @@ function ProjectPreviewCard({ project }: { project: ProjectPreview }) {
       <p className="text-style-label uppercase text-text-dark">{project.number}</p>
 
       <div className="relative w-full aspect-square">
-        <div className="absolute top-0 left-0 border border-text-dark overflow-hidden w-1/3 aspect-square transition-all duration-500 grayscale md:group-hover:w-full md:group-hover:grayscale-0">
+        <div className="absolute top-0 left-0 border border-text-dark overflow-hidden aspect-square w-full grayscale-0 md:w-1/3 md:grayscale transition-all duration-500 md:group-hover:w-full md:group-hover:grayscale-0">
           <Image src={project.image} alt={project.title} fill unoptimized />
         </div>
       </div>

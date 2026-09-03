@@ -123,10 +123,14 @@ export default function FloatingPillsHero() {
         ))}
       </div>
 
-      {/* Mobile — static wrapped fallback */}
-      <div className="flex md:hidden flex-wrap gap-xs justify-center mt-m">
+      {/* Mobile — static, scattered behind the text (no animation, no cursor to attract to) */}
+      <div className="absolute inset-0 md:hidden pointer-events-none">
         {pills.map((pill) => (
-          <Pill key={pill.label} className="w-fit">
+          <Pill
+            key={pill.label}
+            className="absolute w-fit"
+            style={{ left: `${pill.xPct}%`, top: `${pill.yPct}%`, transform: "translate(-50%, -50%)" }}
+          >
             {pill.label}
           </Pill>
         ))}

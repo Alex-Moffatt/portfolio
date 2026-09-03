@@ -134,7 +134,7 @@ const foundations = [
   },
 ];
 
-function ToggleIcon({ open }: { open: boolean }) {
+function ToggleIcon({ open, className = "" }: { open: boolean; className?: string }) {
   return (
     <svg
       width="24"
@@ -142,7 +142,7 @@ function ToggleIcon({ open }: { open: boolean }) {
       viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
-      className={`shrink-0 transition-transform duration-300 ${open ? "rotate-45" : ""}`}
+      className={`shrink-0 transition-transform duration-300 ${open ? "rotate-45" : ""} ${className}`}
     >
       <path d="M12 5v14M5 12h14" stroke="#252122" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
@@ -158,26 +158,24 @@ function ProgrammeRow({ programme, first = false }: { programme: Programme; firs
         type="button"
         onClick={() => setOpen((o) => !o)}
         aria-expanded={open}
-        className="grid grid-cols-1 md:grid-cols-6 gap-s md:gap-m w-full text-left pt-m pb-m transition-colors duration-300 hover:bg-grey"
+        className="relative grid grid-cols-1 md:grid-cols-6 gap-s md:gap-m w-full text-left pt-m pb-m pr-xl transition-colors duration-300 hover:bg-grey"
       >
         <p className="text-style-label uppercase text-text-dark md:col-span-2">{programme.label}</p>
 
-        <div className="flex items-start justify-between gap-m md:col-span-4">
-          <div className="flex flex-col gap-m max-w-col-3">
-            <p className="text-style-subtitle text-text-dark">{programme.tagline}</p>
-            <div className="flex flex-col gap-s">
-              <p className="text-style-label uppercase text-text-dark">Best for:</p>
-              <div className="flex flex-wrap gap-xs">
-                {programme.bestFor.map((tag) => (
-                  <Pill key={tag} filled className="shrink-0 w-fit">
-                    {tag}
-                  </Pill>
-                ))}
-              </div>
+        <div className="flex flex-col gap-m max-w-col-3 md:col-span-4">
+          <p className="text-style-subtitle text-text-dark">{programme.tagline}</p>
+          <div className="flex flex-col gap-s">
+            <p className="text-style-label uppercase text-text-dark">Best for:</p>
+            <div className="flex flex-wrap gap-xs">
+              {programme.bestFor.map((tag) => (
+                <Pill key={tag} filled className="shrink-0 w-fit">
+                  {tag}
+                </Pill>
+              ))}
             </div>
           </div>
-          <ToggleIcon open={open} />
         </div>
+        <ToggleIcon open={open} className="absolute top-m right-0" />
       </button>
 
       <div className={`grid grid-cols-1 md:grid-cols-6 gap-s md:gap-m ${open ? "pb-section" : ""}`}>

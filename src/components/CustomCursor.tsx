@@ -69,7 +69,7 @@ export default function CustomCursor() {
   }, []);
 
   return (
-    <>
+    <div className="hidden md:block">
       {Array.from({ length: TRAIL_LENGTH }).map((_, i) => {
         const size = LEAD_SIZE - (i + 1) * 1.4;
         return (
@@ -95,6 +95,6 @@ export default function CustomCursor() {
         className="bg-pink fixed top-0 left-0 border border-text-dark pointer-events-none"
         style={{ width: LEAD_SIZE, height: LEAD_SIZE, zIndex: 9999 }}
       />
-    </>
+    </div>
   );
 }

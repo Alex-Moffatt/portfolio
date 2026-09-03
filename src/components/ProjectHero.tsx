@@ -26,7 +26,7 @@ export default function ProjectHero({ image, alt, headline, stats, columns = 2 }
         <div className="md:col-start-2 md:col-span-4 flex flex-col gap-xl items-center">
           <p className="text-style-h2 text-text-dark text-center">{headline}</p>
 
-          <div className={`grid grid-cols-1 ${columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2"} gap-m w-full`}>
+          <div className={`grid grid-cols-1 ${columns === 3 ? "md:grid-cols-3" : "md:grid-cols-2"} gap-s md:gap-m w-full`}>
             {stats.map((stat) => (
               <div key={stat.label} className="border-t border-grey pt-s flex flex-col items-center gap-xs text-center">
                 <p className="text-style-label uppercase text-text-dark-secondary">{stat.label}</p>

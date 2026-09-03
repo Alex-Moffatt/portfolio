@@ -25,8 +25,8 @@ export default function CaseStudyCard({
       }`}
     >
       <div
-        className={`border border-text-dark relative w-full aspect-[193/120] overflow-hidden grayscale transition-[filter] duration-500 ${
-          hoverScope === "group" ? "group-hover:grayscale-0" : "hover:grayscale-0"
+        className={`border border-text-dark relative w-full aspect-[193/120] overflow-hidden grayscale-0 md:grayscale transition-[filter] duration-500 ${
+          hoverScope === "group" ? "md:group-hover:grayscale-0" : "md:hover:grayscale-0"
         }`}
       >
         <Image src={image} alt={title} fill unoptimized />
