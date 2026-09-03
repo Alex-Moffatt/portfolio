@@ -95,7 +95,7 @@ export default function Header() {
           </div>
 
           {/* Right — CTA (desktop only) */}
-          <CtaButton href="/contact" className="hidden md:inline-flex">
+          <CtaButton href="https://zcal.co/alexmoffatt/30min" className="hidden md:inline-flex">
             Get in touch
           </CtaButton>
 
@@ -141,7 +141,7 @@ export default function Header() {
             </a>
           ))}
 
-          <CtaButton href="/contact" variant="light" className="inline-flex mt-m">
+          <CtaButton href="https://zcal.co/alexmoffatt/30min" variant="light" className="inline-flex mt-m">
             Get in touch
           </CtaButton>
         </div>

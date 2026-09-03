@@ -36,7 +36,7 @@ export default function Footer() {
       {/* Top row */}
       <div className="px-s md:px-l flex flex-col md:flex-row md:items-center gap-m">
         <span className="text-style-label uppercase text-text-light-secondary">© Alex Moffatt</span>
-        <CtaButton href="/contact" className="inline-flex justify-center w-fit">
+        <CtaButton href="https://zcal.co/alexmoffatt/30min" className="inline-flex justify-center w-fit">
           Get in touch
         </CtaButton>
       </div>

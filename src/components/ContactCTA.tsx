@@ -17,7 +17,7 @@ export default function ContactCTA({ variant }: ContactCTAProps) {
           </p>
         </div>
 
-        <CtaButton href="mailto:alexmoffatt92@gmail.com" className="inline-flex justify-center w-[293px]">
+        <CtaButton href="https://zcal.co/alexmoffatt/30min" className="inline-flex justify-center w-[293px]">
           Book a call
         </CtaButton>
       </div>
