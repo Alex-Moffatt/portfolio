@@ -17,7 +17,7 @@ type ProjectHeroProps = {
 
 export default function ProjectHero({ image, alt, headline, stats, columns = 2 }: ProjectHeroProps) {
   return (
-    <section className="w-full bg-white min-h-screen flex flex-col">
+    <section className="w-full bg-white min-h-[calc(100vh-var(--header-height))] flex flex-col">
       <div className={`border border-text-dark relative w-full flex-1 ${reveal}`}>
         <Image src={image} alt={alt} fill unoptimized />
       </div>

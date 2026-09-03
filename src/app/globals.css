@@ -113,6 +113,9 @@ h1, h2,
   to { transform: translateX(-50%); }
 }
 
+/* Header is fixed/overlaid — subtract its height from any viewport-height hero */
+:root { --header-height: 58px; }
+
 /* Responsive section spacing utilities */
 :root { --section-gap: 120px; }
 .section-py { padding-top: var(--section-gap); padding-bottom: var(--section-gap); }

@@ -58,16 +58,14 @@ export default function Home() {
       <Header />
 
       {/* Hero */}
-      <section className="relative w-full bg-white min-h-screen md:min-h-[829px] px-s md:px-l py-xl flex flex-col items-center justify-center gap-m overflow-hidden">
-        <div className="relative z-10 max-w-col-4 w-full flex flex-col gap-l items-center text-center">
+      <FloatingPillsHero>
+        <div data-hero-text className="relative z-10 max-w-col-4 w-full flex flex-col gap-l items-center text-center">
           <h1 className="text-style-h1 text-text-dark">Take the guesswork out of innovation.</h1>
           <p className="text-style-subtitle text-text-dark-secondary">
-            Audience research and evidence-led strategy for charities.
+            Audience research and evidence-led strategy &amp; design for charities.
           </p>
         </div>
-
-        <FloatingPillsHero />
-      </section>
+      </FloatingPillsHero>
 
       {/* Examples */}
       <section className="w-full bg-background border-t border-text-dark px-s md:px-l pt-m pb-section flex flex-col">
@@ -100,7 +98,7 @@ export default function Home() {
               <a
                 key={programme.number}
                 href="/services"
-                className={`bg-white border border-text-dark p-m flex flex-col justify-start md:justify-between gap-l md:gap-xl min-h-[220px] md:min-h-[387px] no-underline ${zoomImage}`}
+                className={`bg-white border border-text-dark p-m flex flex-col justify-start gap-l md:gap-xl no-underline ${zoomImage}`}
               >
                 <div className="flex flex-col gap-s">
                   <p className="text-style-subtitle text-text-dark">{programme.title}</p>
