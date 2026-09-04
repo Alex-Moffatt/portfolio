@@ -8,7 +8,7 @@ type CaseStudySectionProps = {
 
 export default function CaseStudySection({ label, children, justify = "between" }: CaseStudySectionProps) {
   return (
-    <div className="flex-1 grid content-start md:content-normal grid-cols-1 md:grid-cols-6 md:[grid-template-rows:1fr] gap-s md:gap-m w-full">
+    <div className="flex-1 grid content-start md:content-normal grid-cols-1 md:grid-cols-6 md:[grid-template-rows:1fr] gap-[48px] md:gap-m w-full">
       <p className="text-style-label text-text-dark uppercase md:col-span-2 self-start md:sticky md:top-[120px]">
         {label}
       </p>
